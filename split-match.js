@@ -10,12 +10,7 @@ var stream = fs.createReadStream('input-sensor.txt').pipe(
     		var count = 0;
     		console.log('---------INPUT---------')
     		console.log(string)
-    		for(var i = 0; i < chunk.length; i++){
-    			if(chunk[i]==44)
-    				count++;
-    		}
-    		// console.log(count + " in the stream")
-
+    		
     		var result = string.replace(/\n/, '').split(token+' ')
 
 		    this.push(result)
