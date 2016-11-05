@@ -7,6 +7,7 @@ var token = process.argv[2];
 var stream = fs.createReadStream('input-sensor.txt').pipe(
 		through2({ objectMode: true }, function(chunk, enc, callback) {
     		var string = chunk.toString()
+            string = string.substr(0, string.lastIndexOf(token));
     		var count = 0;
     		console.log('---------INPUT---------')
     		console.log(string)
